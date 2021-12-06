@@ -1,0 +1,65 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package deneme;
+
+import java.util.Scanner;
+
+public class JavaApplication2 {
+
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in); 
+        System.out.println("(ax²+bx+c) ikinci dereceden bir denklemdir.\n Denklemdeki sabitleri aşağıdaki gibi sırayla girin"); 
+        
+        System.out.print("a değerini giriniz :"); 
+        double a = sc.nextInt(); 
+        System.out.print("b değerini giriniz   :"); 
+        double b = sc.nextInt(); 
+        System.out.print("c değerini giriniz   :"); 
+        double c = sc.nextInt();
+        
+        denemesinifi deneme = new denemesinifi();
+        System.out.print(deneme.kokbul(a, b, c));
+    }
+    }
+
+class denemesinifi {
+    double kok1,kok2;
+    double delta;
+    
+    public double kokbul(double a, double b, double c)
+    {
+             delta = (b * b) - (4 * a * c);
+             kok1 = (-b - Math.sqrt(delta))/(2*a);
+             kok2 = (-b + Math.sqrt(delta))/(2*a);
+             
+             if(delta > 0)
+             {
+                 System.out.print("Delta 0'dan buyuk... \n kok1 ve kok2 toplamı : ");
+                 return (kok1 + kok2);
+             }
+             else if(delta < 0)
+             {  
+                 System.out.print("Delta sifirdan kucuk kok yok.. \n Delta: ");
+                 return delta;
+             }
+             else if(delta == 0)
+             {
+                double kok = (-1*b)/(2*a);
+                System.out.print("Delta 0'a esit.. \n kok1=kok2 = ");
+                return kok;
+             }
+        return 0;
+    }
+
+    
+    
+    
+    
+}
+    
+    
+
+
